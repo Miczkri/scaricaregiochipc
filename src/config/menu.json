@@ -1,0 +1,34 @@
+{
+  "main": [
+    {
+      "name": "Categorie",
+      "url": "/categorie"
+    },
+    {
+      "name": "Tag",
+      "url": "/tag"
+    }
+  ],
+  "footer": [
+    {
+      "name": "Chi siamo",
+      "url": "about"
+    },
+    {
+          "name": "Autore",
+          "url": "/autore"
+    },
+    {
+      "name": "Contatto",
+      "url": "/contatto"
+    },
+    {
+      "name": "Informativa sulla privacy",
+      "url": "/informativa-sulla-privacy"
+    },
+    {
+      "name": "Informativa sui cookie",
+      "url": "/informativa-sui-cookie"
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "site": {
+    "title": "scaricaregiochipc.it | Scaricare giochi su PC gratis",
+    "base_url": "https://scaricaregiochipc.it",
+    "base_path": "/",
+    "trailing_slash": false,
+    "favicon": "/images/favicon.ico"
+  },
+
+  "settings": {
+    "pagination": 9
+  },
+
+  "metadata": {
+    "meta_description": "Scaricaregiochipc.it è il miglior sito su Internet dove è possibile scaricare giochi gratis per PC. Tutti i vostri giochi preferiti in un unico posto!"
+  },
+
+  "google_tag_manager": {
+    "enable": true,
+    "gtm_id": "GTM-M7QTB58W"
+  },
+
+  "params": {
+    "contact_form_action": "#",
+    "copyright": "© 2026 scaricaregiochipc.it"
+  },
+
+  "contactinfo": {
+    "address": "Via Zannoni 9 <br/> Storo, Trento",
+    "email": "contatto@scaricaregiochipc.it",
+    "phone": "39 0399 8526626"
+  }
+}
