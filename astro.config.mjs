@@ -8,6 +8,14 @@ import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
 
+import { defineConfig } from 'astro/config';
+
+export default defineConfig({
+  image: {
+    domains: ['img.scaricaregiochipc.it'],
+  },
+});
+
 // Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
   const [name, weightPart] = fontStr.split(":");
