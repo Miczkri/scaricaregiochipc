@@ -8,35 +8,24 @@ import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
 
-import { defineConfig } from 'astro/config';
-
-export default defineConfig({
-  image: {
-    domains: ['img.scaricaregiochipc.it'],
-  },
-});
-
 // Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
   const [name, weightPart] = fontStr.split(":");
-  let weights = [400]; // default weight
+  let weights = [400]; 
 
   if (weightPart) {
-    // Extract weights from wght@400;500;600 format
     const weightMatch = weightPart.match(/wght@?([\d;]+)/);
     if (weightMatch) {
       weights = weightMatch[1].split(";").map((w) => parseInt(w, 10));
     }
   }
 
-  // remove + from font name and add space
   const cleanName = name.replace(/\+/g, " ");
   return { name: cleanName, weights };
 }
 
-// Build fonts configuration from theme.json
 const fontsConfig = Object.entries(theme.fonts.font_family)
-  .filter(([key]) => !key.includes("_type")) // Filter out type entries
+  .filter(([key]) => !key.includes("_type"))
   .map(([key, fontStr]) => {
     const { name, weights } = parseFontString(fontStr);
     const typeKey = `${key}_type`;
@@ -52,12 +41,23 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
     };
   });
 
-// https://astro.build/config
+// GŁÓWNA KONFIGURACJA
 export default defineConfig({
   site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
   base: config.site.base_path ? config.site.base_path : "/",
   trailingSlash: config.site.trailing_slash ? "always" : "never",
-  image: { service: sharpImageService() },
+  
+  // 1. Dodajemy sekcję build dla Inlining CSS
+  build: {
+    inlineStylesheets: 'always',
+  },
+
+  // 2. Łączymy obie konfiguracje obrazów
+  image: { 
+    service: sharpImageService(),
+    domains: ['img.scaricaregiochipc.it'], // Zezwalamy na obrazy z R2
+  },
+
   vite: { plugins: [tailwindcss()] },
   fonts: fontsConfig,
   integrations: [
