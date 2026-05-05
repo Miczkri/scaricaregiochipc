@@ -85,6 +85,8 @@ const { title, description, authors, categories, image, date, tags, image_alt } 
               src={image}
               height={500}
               width={1000}
+              widths={[400, 700, 1000]}
+              sizes="(max-width: 1000px) 100vw, 1000px"
               alt={image_alt || title}
               fetchpriority="high"
               loading="eager"
