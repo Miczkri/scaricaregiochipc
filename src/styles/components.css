@@ -190,3 +190,9 @@
 footer p a {
   @apply transition-all duration-200 hover:text-white;
 }
+
+.rounded-lg {
+  width: 100%;
+  height: auto;
+  max-width: 1000px; /* Aby nie rozciągał się powyżej Twojej max jakości */
+}
