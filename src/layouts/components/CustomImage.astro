@@ -6,19 +6,19 @@ const { src, alt } = Astro.props;
 <img
   src={src}
   alt={alt}
-  width="800"        <!-- "Sztywna" szerokość dla przeglądarki -->
-  height="450"       <!-- "Sztywna" wysokość (proporcja 16:9) -->
-  loading="lazy"      <!-- Obrazy w treści zawsze ładujemy leniwie -->
-  decoding="async"    <!-- Przyspiesza renderowanie strony -->
-  class="w-full h-auto rounded-lg" <!-- Klasy CSS dla responsywności -->
+  width="800"        
+  height="450"       
+  loading="lazy"      
+  decoding="async"    
+  class="w-full h-auto rounded-lg"
 />
 
 <style>
   img {
     display: block;
     max-width: 100%;
-    height: auto;     /* Zapewnia, że obrazek zachowa proporcje mimo width/height */
-    aspect-ratio: 16 / 9; /* Rezerwuje miejsce na stronie przed załadowaniem pliku */
-    background-color: #f3f4f6; /* Opcjonalny jasny placeholder */
+    height: auto;     
+    aspect-ratio: 16 / 9;
+    background-color: #f3f4f6;
   }
 </style>
