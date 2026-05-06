@@ -6,8 +6,10 @@ const { src, alt } = Astro.props;
 <img
   src={src}
   alt={alt}
-  width="800"        
-  height="450"       
+  height={775}
+  width={436}
+  widths={[400, 665, 780]}
+  sizes="(max-width: 780px) 78vw, 780px"       
   loading="lazy"      
   decoding="async"    
   class="w-full h-auto rounded-lg"
