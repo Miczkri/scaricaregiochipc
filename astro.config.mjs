@@ -3,10 +3,10 @@ import react from "@astrojs/react";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import AutoImport from "astro-auto-import";
-import gtm from "astro-gtm-lite";
 import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
+import partytown from "@astrojs/partytown";
 
 // Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
@@ -63,6 +63,12 @@ export default defineConfig({
   integrations: [
     react(),
     sitemap(),
+    partytown({
+      config: {
+        // To jest kluczowe: pozwala Partytown komunikować się z warstwą danych GTM
+        forward: ["dataLayer.push"],
+      },
+    }),
     AutoImport({
       imports: [
         "@/shortcodes/Button",
@@ -75,11 +81,6 @@ export default defineConfig({
       ],
     }),
     mdx(),
-    gtm({
-      enable: config.google_tag_manager.enable,
-      id: config.google_tag_manager.gtm_id,
-      devMode: true,
-    }),
   ],
   markdown: {
     shikiConfig: { theme: "one-dark-pro", wrap: true },
