@@ -8,7 +8,11 @@ import { humanize, markdownify, slugify } from "@/lib/utils/textConverter";
 import { Image } from "astro:assets";
 import { render } from "astro:content";
 import { BiCalendarEdit, BiCategoryAlt } from "react-icons/bi";
+import CustomImage from "@/components/CustomImage.astro";
 
+const components = {
+      img: CustomImage,
+    };
 const allAuthors = await getSinglePage("authors");
 const posts = await getSinglePage("posts");
 const { post } = Astro.props;
@@ -98,7 +102,7 @@ const { title, description, authors, categories, image, date, tags, image_alt } 
 
       <div class="md:col-10">
         <div class="content mb-16 text-left">
-          <Content />
+          <Content components={components} />
         </div>
         <div class="flex flex-wrap items-center justify-between">
           <ul class="mr-4 mb-4 space-x-3">
