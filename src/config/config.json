@@ -3,7 +3,7 @@
     "title": "scaricaregiochipc.it | Scaricare giochi su PC gratis",
     "base_url": "https://scaricaregiochipc.it",
     "base_path": "/",
-    "trailing_slash": false,
+    "trailing_slash": true,
     "favicon": "/images/favicon.ico"
   },
 
