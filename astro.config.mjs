@@ -7,6 +7,8 @@ import { defineConfig, fontProviders, sharpImageService } from "astro/config";
 import config from "./src/config/config.json";
 import theme from "./src/config/theme.json";
 import partytown from "@astrojs/partytown";
+import cloudflare from '@astrojs/cloudflare';
+
 
 // Helper to parse font string format: "FontName:wght@400;500;600;700"
 function parseFontString(fontStr) {
@@ -53,9 +55,11 @@ export default defineConfig({
   },
 
   // 2. Łączymy obie konfiguracje obrazów
-  image: { 
-    service: sharpImageService(),
-    domains: ['img.scaricaregiochipc.it'], // Zezwalamy na obrazy z R2
+  adapter: cloudflare({
+    imageService: 'cloudflare-binding',
+  }),
+  image: {
+    domains: ['img.scaricaregiochipc.it'],
   },
 
   vite: { plugins: [tailwindcss()] },
