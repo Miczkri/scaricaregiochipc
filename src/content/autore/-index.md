@@ -1,5 +1,5 @@
 ---
-title: "Authors"
-meta_title: "Authors"
+title: "Autore"
+meta_title: "Autore"
 authors: ["Gabriele Piazza"]
 ---
