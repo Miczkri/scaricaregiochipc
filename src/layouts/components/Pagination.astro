@@ -6,8 +6,22 @@ const hasPrevPage = currentPage > 1;
 const hasNextPage = totalPages > currentPage;
 
 let pageList = [];
-for (let i = 1; i <= totalPages; i++) {
-  pageList.push(i);
+const maxVisibleButtons = 5;
+let pageList = [];
+
+if (totalPages <= maxVisibleButtons) {
+  for (let i = 1; i <= totalPages; i++) pageList.push(i);
+} else {
+  let start = Math.max(currentPage - 2, 1);
+  let end = Math.min(start + maxVisibleButtons - 1, totalPages);
+
+  if (end === totalPages) {
+    start = Math.max(end - maxVisibleButtons + 1, 1);
+  }
+
+  for (let i = start; i <= end; i++) {
+    pageList.push(i);
+  }
 }
 ---
 
