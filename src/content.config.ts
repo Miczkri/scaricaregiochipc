@@ -4,7 +4,7 @@ import { z } from "astro/zod";
 
 // About collection schema
 const aboutCollection = defineCollection({
-  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/chisiamo" }),
+  loader: glob({ pattern: "**/-*.{md,mdx}", base: "src/content/about" }),
   schema: z.object({
     title: z.string(),
     meta_title: z.string().optional(),
