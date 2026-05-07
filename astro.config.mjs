@@ -43,8 +43,8 @@ const fontsConfig = Object.entries(theme.fonts.font_family)
 
 // GŁÓWNA KONFIGURACJA
 export default defineConfig({
-  site: config.site.base_url ? config.site.base_url : "http://examplesite.com",
-  base: config.site.base_path ? config.site.base_path : "/",
+  site: "https://scaricaregiochipc.it",
+  base: "/",
   trailingSlash: "always",
   
   // 1. Dodajemy sekcję build dla Inlining CSS
