@@ -1,0 +1,13 @@
+/category/* /categorie/:splat  301
+/azione* /categorie/azione  301
+/strategia* /categorie/strategia 301
+/rpg* /categorie/rpg 301
+/corse* /categorie/corse 301
+/fps* /categorie/fps 301
+/avventura* /categorie/avventura 301
+/simulazione* /categorie/simulazione 301
+/sport* /categorie/sport 301
+/horror* /categorie/horror 301
+/recensioni* /categorie/recensioni 301
+/notizia* /categorie/notizia 301
+/arcade* /categorie/arcade 301
