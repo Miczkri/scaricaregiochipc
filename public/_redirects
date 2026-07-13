@@ -11,3 +11,4 @@
 /recensioni* /categorie/recensioni 301
 /notizia* /categorie/notizia 301
 /arcade* /categorie/arcade 301
+/*feed/ /:splat 301
